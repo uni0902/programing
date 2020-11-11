@@ -1,0 +1,22 @@
+<block wx:if="{{get}}">
+<swiper indicator-dots="true" interval="2000" duration="1000" autoplay="true">
+  <block wx:for="{{3}}" wx:for-item="i" wx:key='id'>
+          <swiper-item>
+            <image src="{{newsList[i].image}}" bindtap="gotoDetail" data-id="{{newsList[i].id}}" class="sild-image"/>
+          </swiper-item>
+  </block> 
+</swiper>
+<!--新闻列表-->
+<view id='news-list'>
+  <view class='list-item' wx:for="{{newsList}}" wx:for-item="news" wx:key="id">
+    <image src='{{news.image}}' bindtap="gotoDetail" data-id="{{news.id}}"/>
+    <view class="news-title" bindtap="gotoDetail" data-id="{{news.id}}" >
+      <text>时间：{{news.edition}}</text>
+      <view class="title">{{news.title}}</view>
+  </view>
+  </view>
+</view>
+</block>
+<view wx:else>
+  <image src="/images/background.jpg" class="background" mode="aspectFill"></image>
+</view>

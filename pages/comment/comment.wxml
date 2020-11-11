@@ -1,0 +1,52 @@
+<!--pages/comment/comment.wxml-->
+
+<view wx:if="{{get}}" id='comments-list'>
+  <view class='container'>
+    <view class='title'>{{title}}</view>
+    <view class='add_data'>时间:{{edition}}</view>
+    <text>\n</text>
+  </view>
+  <view wx:if="{{num}}" class='list-item'>
+    <view class="pro-con">
+    <block wx:for="{{comments}}" wx:for-item="cmt" wx:key="id">
+      <view class="pro-box">
+        <view class="head">
+          <image class="img" src="{{cmt.userimage}}" mode="aspectFit"></image>
+          <text>{{cmt.username}}</text>
+        </view>
+        <view class="addr-info">
+          <view class="addr-text">
+            {{cmt.comment}}
+          </view>
+        </view>
+        <text>\n{{cmt.time}}</text>
+      </view>
+    </block>
+    <text>\n\n</text>
+  </view>
+  </view>
+  <view wx:else>
+    <view class="backg">
+      <block wx:for="{{plain}}" wx:for-item="cmt" wx:key="id">
+      <view>
+        <view class="show">
+          <text>{{cmt.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  </view>
+  <view id="comment-list">
+    <form bindsubmit="getincomments">
+  <view class="release">
+    <view class="replyinfo2">
+      <textarea class='text' placeholder-class="input_null" fixed="true" maxlength="300" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="请输入回复" name="comment" value='{{com}}' placeholder="请输入你的评论"></textarea>
+      <button form-type="submit" class="submit" type="primary" plain="true">发表</button>
+    </view>
+  </view>
+</form>
+  </view>
+</view>
+<view wx:else>
+  <image src="/images/background.jpg" class="background" mode="aspectFill"></image>
+</view>

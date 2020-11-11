@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='title'>{{article.title}}</view>
+  <view class='poster'>
+    <image src='{{article.image}}' mode='widthFix'></image>
+  </view>
+    <view class='content'>{{article.content}}</view>
+    <view class='add_data'>时间:{{article.edition}}</view>
+    <text>\n\n\n</text>
+</view>
+
+<view  wx:if="{{notice}}" class="notice"><image src='/images/notice.jpg'></image><view><button bindtap="stop">不再提醒</button></view></view>
+
+<view class="release">
+    <view class="replyinfo2">
+      <button class='submit bublle' wx:if='{{isAdd}}' plain='true' bindtap="cancelFavourites" type="primary">取消收藏</button>
+      <button class='submit bubble' wx:else plain='true' bindtap='addFavourites' type="primary">单击收藏</button>
+      <button class='submit bubble' bindtap="gotoComment" data-id='{{article.id}}' type="primary" plain="true">进入评论</button>
+    </view>
+  </view>

@@ -1,0 +1,68 @@
+/* 登录面板 */
+#myLongin{
+  background-color: #64c8fa;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+/* 1-1 头像图片 */
+#myIcon{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+/* 1-2 微信昵称 */
+#nickName{
+  color: black;
+}
+/* 我的收藏 */
+/*2-1 新闻列表容器*/
+#news-list{
+  min-height: 600rpx;
+  padding: 15rpx;
+}
+/*2-2 列表项目*/
+.list-item{
+  display:flex;
+  /*flex-direction: row;*/
+  width: 100%;
+  background-color: azure;
+  border: 1px solid #70bcf6; 
+  border-bottom: 0rpx solid gray;
+}
+/*2-3 新闻图片*/
+.list-item image{
+  width: 230rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+
+/*2-4 新闻标题*/
+.news-title{
+width: 100%;
+display: block;
+line-height: 60rpx;
+font-size: 10pt;
+}
+
+.title{
+  max-height: 60px;
+  overflow: hidden;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+.my{
+  display:flex;
+  border: 2px solid #70bcf6; 
+  align-items:center;
+  justify-content:center;
+  background-color: #64c8fa;
+  color: #444;
+  font-weight: bold;
+  font-size: 20px;
+}
